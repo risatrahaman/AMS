@@ -1,0 +1,52 @@
+seperate css file that can be linek with any html file
+h1 {
+    color:orange;
+    background-color: black;
+    font-size: 50px;
+    /* underline,overline,cross etc */
+    text-decoration:underline;
+    /* font type should be websafe font check w3school*/
+    font-family:'Times New Roman', Times, serif;
+    /* text alingment */
+    text-align: center;
+}
+
+p {
+    color:slateblue;
+    text-align:left;
+    /* varticle spacing between lines */
+    line-height: 10px;
+
+    /* letter-spacing: 2px; */
+    
+    /* column-count:auto; also colum-gap: */
+}
+
+form{
+    background-color:antiquewhite ;
+}
+
+ul{
+    /* border properties */
+
+    /* border-width: 4px;
+    border-style: solid;
+    border-color: brown; */
+
+    /* 3 in 1 way  */
+    border: 4px solid crimson;
+
+}
+
+/* to style unique list */
+ul.phrases{
+    border: 4px dotted blueviolet;
+}
+
+li{
+    /* none means the dots are removed */
+    list-style-type: none; 
+    /* text_shadow: check the form */
+    /* text-shadow: 2px 2px lightgray; */
+    text-shadow: 2px 2px #e9e215;
+}
