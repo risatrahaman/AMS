@@ -11,18 +11,24 @@
     $encryptedPass = password_hash($pass, PASSWORD_DEFAULT);
 
     $userMode = $_POST['users'];
-
     
-    mysqli_query($conn, "insert into user values('$uid', '$fname', '$lname', '$phone', '$address', '$email', '$encryptedPass')");
+    $result = mysqli_query($conn, "select uid from user where uid='$uid'");
     
-    if ($userMode == 'Customer'){
-        mysqli_query($conn, "insert into customer values('$uid', 'C-$uid', 0, 'regular')");
+    if ($result->num_rows == 0){
+        mysqli_query($conn, "insert into user values('$uid', '$fname', '$lname', '$phone', '$address', '$email', '$encryptedPass')");
+    
+        if ($userMode == 'Customer'){
+            mysqli_query($conn, "insert into customer values('$uid', 'C-$uid', 0, 'regular')");
+        }
+        else{
+            mysqli_query($conn, "insert into admin values('$uid', 'A-$uid')");
+        }
     }
     else{
-        mysqli_query($conn, "insert into admin values('$uid', 'A-$uid')");
+        echo "User already exists";
     }
     
+    
     echo "It works!\n";
-
 
 ?>
