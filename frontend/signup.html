@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styleproject.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
 </head>
 <body>
@@ -12,16 +9,16 @@
     
     <h2>Create an Account</h2>
     
-    <form action="">
-        <!-- <label for="email"></label> -->
+    <form method="post", action="../backend/signup-db.php">
         
-        <input type="text" id="name" placeholder="first name" required>
-        <input type="text" name="last name" id="name" placeholder="last name" required>
-        <input type="number" name="" id="" placeholder="Your phone number">
-        <input type="text" id="address" placeholder="Your address">
-        <input type="email" id="email" placeholder="Email" required><br><br>
+        <!-- Don't change the name fields!-->
+        <input type="text" name="fname" id="name" placeholder="first name" required>
+        <input type="text" name="lname" id="name" placeholder="last name" required>
+        <input type="number" name="phone" id="" placeholder="Your phone number">
+        <input type="text" name="address" id="address" placeholder="Your address">
+        <input type="email" name="email" id="email" placeholder="Email" required><br><br>
         <label for="password"></label>
-        <input type="password" name="" id="password" placeholder="password" required><br><br>
+        <input type="password" name="pass" id="password" placeholder="password" required><br><br>
         <!-- submit button -->
         <input type="submit" value="Create Account">
     </form>
