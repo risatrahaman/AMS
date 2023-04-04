@@ -1,7 +1,7 @@
 create database ams;
 
 create table user (
-uid int not null,
+uid int auto_increment not null,
 email varchar(50),
 password varchar(30),
 phone int,
