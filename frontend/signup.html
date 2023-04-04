@@ -12,6 +12,7 @@
     <form method="post", action="../backend/signup-db.php">
         
         <!-- Don't change the name fields!-->
+        <input type="text" name="uid" id="uid" placeholder="user id" required>
         <input type="text" name="fname" id="name" placeholder="first name" required>
         <input type="text" name="lname" id="name" placeholder="last name" required>
         <input type="number" name="phone" id="" placeholder="Your phone number">
@@ -19,6 +20,13 @@
         <input type="email" name="email" id="email" placeholder="Email" required><br><br>
         <label for="password"></label>
         <input type="password" name="pass" id="password" placeholder="password" required><br><br>
+        
+        <!-- select menu -->
+        <select name="users" id="users">
+            <option value="Customer">Customer</option>
+            <option value="Admin">Admin</option>
+        </select>
+
         <!-- submit button -->
         <input type="submit" value="Create Account">
     </form>
