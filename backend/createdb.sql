@@ -26,3 +26,10 @@ type varchar(10),
 primary key (cid),
 foreign key (uid) references user(uid)
 );
+
+create table airport (
+airport_code varchar(3) not null,
+airport_name varchar(50) not null,
+destination varchar(30) not null,
+primary key (airport_code)
+);
