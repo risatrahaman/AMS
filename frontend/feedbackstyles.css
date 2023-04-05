@@ -98,3 +98,8 @@ tr td:first-child{
     padding-top: 20px;
     
 }
+
+tr td:nth-child(2){
+    padding-top: 20px;
+    
+}

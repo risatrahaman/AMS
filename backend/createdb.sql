@@ -57,3 +57,36 @@ ftime time,
 primary key (book_id),
 foreign key (fid) references flight(fid)
 );
+
+create table help (
+hid int auto_increment,
+htype varchar(50),
+primary key (hid)
+);
+
+create table ask (
+cid varchar(10) not null,
+hid varchar(50) not null,
+hdate date,
+htime time,
+foreign key (cid) references customer(cid),
+foreign key (hid) references help(hid)
+);
+
+create table feedback (
+cid varchar(10) not null,
+feed_id int auto_increment,
+feed_date date,
+description varchar(1000),
+primary key (feed_id),
+foreign key (cid) references customer(cid)
+);
+
+create table coupon (
+coupon_code char(5) not null,
+validity date,
+type varchar(10),
+cid varchar(10) not null,
+primary key(coupon_code),
+foreign key (cid) references customer(cid)
+);

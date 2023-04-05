@@ -5,12 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400;1,800&display=swap" rel="stylesheet">
     <title>Help</title>
 
 </head>
 <body>
     <div class="container">
-        <h1>Frequently Asked Questions</h1>
+        <h1>Help and Services</h1>
+
+        <h2>How may we help?</h2>
+        <form method="get" action="../backend/help-db.php">
+            <select name="hname">
+                <option value="Lost Baggage">Lost Baggage</option>
+                <option value="Change Schedule">Change Schedule</option>
+                <option value="Cancel Flight">Cancel Flight</option>
+            </select>
+            <button type="submit">Request</button>
+        </form>
+
+        <h2>Frequently Asked Questions</h2>
         <div class='tab'>
             <input type="radio" name="acc" id="1">
             <label for="1">
