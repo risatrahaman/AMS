@@ -16,9 +16,9 @@
 
 .form-box{
     width:380px;
-    height:620px;
+    height:500px;
     position:relative;
-    margin:6% auto;
+    margin: 3% auto;
     background:#fff;
     padding: 5px;
     overflow: hidden;
@@ -27,7 +27,7 @@
 
 .button-box{
     width: 220px;
-    margin: 35px auto;
+    margin: 35 auto;
     position: relative;
     box-shadow: 0 0 20px #ff61241f ;
     border-radius: 30px;
@@ -52,19 +52,6 @@
     background: linear-gradient(to right, #ff105f,#ffad06);
     border-radius: 30px;
     transition: .5s;
-}
-.social-icons{
-    /* topbottom 30px  left right auto */
-    margin: 30px auto;
-    text-align: center;
-}
-
-.social-icons img{
-    width: 30px;
-    margin: 0 10px;
-    box-shadow: 0 0 20px 0 #7f7f7f3d ;
-    cursor: pointer;
-    border-radius: 50%;
 }
 
 .input-group{
@@ -113,6 +100,7 @@ span{
     left: 50px;
 }
 #register{
+    top: 30px;
     left: 50px;
 }
 

@@ -1,6 +1,7 @@
 <?php
+    
     require_once("dbconnect.php");
-
+    
     $name = $_POST['name'];
     $email = $_POST['email'];
     $feedback = $_POST['feedback'];
