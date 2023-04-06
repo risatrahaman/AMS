@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['cid'])){
+  header("location:../frontend/login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

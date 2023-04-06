@@ -10,25 +10,31 @@
     $pass = $_POST['pass'];
     $encryptedPass = password_hash($pass, PASSWORD_DEFAULT);
 
-    $userMode = $_POST['users'];
+    $userMode = $_POST['userType'];
     
-    $result = mysqli_query($conn, "select uid from user where uid='$uid'");
+    $result1 = mysqli_query($conn, "select uid from user where uid='$uid'");
+    $result2 = mysqli_query($conn, "select email from user where email='$email'");
     
-    if ($result->num_rows == 0){
+
+    if ($result1->num_rows != 0){
+        header("Location: ../frontend/signup.php?error=Username is already taken");
+        exit;
+    }
+    else if ($result2->num_rows != 0){
+        header("Location: ../frontend/signup.php?error=Email already exists");
+        exit;
+    }
+    else{
         mysqli_query($conn, "insert into user values('$uid', '$fname', '$lname', '$phone', '$address', '$email', '$encryptedPass')");
-    
+        
         if ($userMode == 'Customer'){
             mysqli_query($conn, "insert into customer values('$uid', 'C-$uid', 0, 'regular')");
         }
-        else{
+        else if ($userMode == 'Admin'){
             mysqli_query($conn, "insert into admin values('$uid', 'A-$uid')");
         }
     }
-    else{
-        echo "User already exists";
-    }
-    
-    
-    echo "It works!\n";
+
+    header("Location: ../frontend/login.php");
 
 ?>

@@ -1,23 +1,28 @@
 <?php
     require("dbconnect.php");
 
-    $uid = $_POST['uid'];
+    $email = $_POST['email'];
     $pass = $_POST['pass'];
 
-    $result = mysqli_query($conn, "select password from user where uid='$uid'");
+    $result1 = mysqli_query($conn, "select uid, password from user where email='$email'");
+    $row1 = mysqli_fetch_array($result1);
     
-    if ($result->num_rows == 0){
-        echo "You don't have an account. Please sign up.";
+    $result2 = mysqli_query($conn, "select cid from customer where uid='$row1[0]'");
+    $row2 = mysqli_fetch_array($result2);
+
+    if ($result1->num_rows == 0){
+        header("location:../frontend/login.php?error=User not found");
+        exit;
     }
     else{
-        $row = mysqli_fetch_array($result);
-        
-        if (password_verify($pass, $row[0])){
-            echo "Logged In successfully";
+        if (password_verify($pass, $row1[1])){
+            
+            session_start();
+            $_SESSION['cid'] = $row2[0];
+            
+            header("location:../frontend/login.php?error=Logged In successfully");
         }else{
-            echo "Password incorrect";
+            header("location:../frontend/login.php?error=Password incorrect");
         }
     }
-
-   echo "It works!\n";
 ?>

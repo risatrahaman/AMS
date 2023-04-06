@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['cid'])){
+  header("location:../frontend/login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,18 +34,18 @@
           <div class="input-row">
             <div class="input-group">
               <label for="">Name</label>
-              <input name="name" type="text" placeholder="Your name">
+              <input name="name" type="text" placeholder="Your name (Not required)">
             </div>
 
             <div class="input-group">
               <label for="">email</label>
-              <input name="email" type="email" placeholder="Your email">
+              <input name="email" type="email" placeholder="Your email (Not required)">
             </div>
           </div>
           
           <br />
           <label for="">Message</label>
-          <textarea  name="feedback" rows="5" placeholder="Write your feedback here"></textarea>
+          <textarea  name="feedback" rows="5" placeholder="Write your feedback here" required></textarea>
           
           <button type="submit">Send</button>
         
