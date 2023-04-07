@@ -1,9 +1,9 @@
 create database ams;
 
-create table user (
+create table users(
 uid varchar(10),
-fname varchar(15),
-lname varchar(15),
+fname varchar(30),
+lname varchar(30),
 phone int,
 address varchar(255),
 email varchar(50),
@@ -15,7 +15,7 @@ create table admin (
 uid varchar(10) not null,
 aid varchar(10) not null,
 primary key (aid),
-foreign key (uid) references user(uid)
+foreign key (uid) references users(uid)
 );
 
 create table customer (
@@ -24,7 +24,7 @@ cid varchar(10) not null,
 distance_covered int,
 type varchar(10),
 primary key (cid),
-foreign key (uid) references user(uid)
+foreign key (uid) references users(uid)
 );
 
 create table airport (
@@ -39,7 +39,7 @@ fid int not null,
 economy_price int not null,
 business_price int not null,
 seat_remaining int,
-airport_code varchar(3) not null.
+airport_code varchar(3) not null,
 primary key (fid),
 foreign key (airport_code) references airport(airport_code)
 );
@@ -66,7 +66,7 @@ primary key (hid)
 
 create table ask (
 cid varchar(10) not null,
-hid varchar(50) not null,
+hid int not null,
 hdate date,
 htime time,
 foreign key (cid) references customer(cid),
@@ -90,3 +90,32 @@ cid varchar(10) not null,
 primary key(coupon_code),
 foreign key (cid) references customer(cid)
 );
+
+create table leisure (
+lname varchar(50) not null,
+ltype varchar(30) not null,
+airport_code varchar(3) not null,
+primary key (lname),
+foreign key (airport_code) references airport(airport_code)
+);
+
+create table car_service (
+car_model varchar(30) not null,
+pick_up varchar(30),
+drop_off varchar(30),
+airport_code varchar(3) not null,
+primary key (car_model),
+foreign key (airport_code) references airport(airport_code)
+);
+
+INSERT INTO users VALUES
+(1, 'Michael', 'Scott', 01123456789, 'Scranton', 'prison_mike@gmail.com', 'azkaban'),
+(2, 'Jim', 'Halpert', 01223456789, 'Utica', 'phillyjim@gmail.com', 'baseball'),
+(3, 'Pam', 'Beesley', 01323456789, 'New York', 'artistpam@gmail.com', 'artislife'),
+(4, 'Dwight', 'Schrute', 01423456789, 'Vermont', 'beetfarmer@gmail.com', 'battlestar'),
+(5, 'Kelly', 'Kapoor', 01523456789, 'New Jersey', 'glamkelly@gmail.com', 'ryanfire');
+
+INSERT INTO airport VALUES
+('DAC', 'Hazrat Shahjalal Airport', 'Chittagong'),
+('CTG', 'Shah Amanat Airport', 'Sylhet'),
+('JES', 'Jashore Airport', 'Syedpur');
