@@ -118,4 +118,4 @@ INSERT INTO users VALUES
 INSERT INTO airport VALUES
 ('DAC', 'Hazrat Shahjalal Airport', 'Chittagong'),
 ('CTG', 'Shah Amanat Airport', 'Sylhet'),
-('Jes', 'Jashore Airport', 'Syedpur');
+('JES', 'Jashore Airport', 'Syedpur');
