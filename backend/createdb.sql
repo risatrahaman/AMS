@@ -39,7 +39,7 @@ fid int not null,
 economy_price int not null,
 business_price int not null,
 seat_remaining int,
-airport_code varchar(3) not null.
+airport_code varchar(3) not null,
 primary key (fid),
 foreign key (airport_code) references airport(airport_code)
 );
@@ -89,4 +89,21 @@ type varchar(10),
 cid varchar(10) not null,
 primary key(coupon_code),
 foreign key (cid) references customer(cid)
+);
+
+create table leisure (
+lname varchar(50) not null,
+ltype varchar(30) not null,
+airport_code varchar(3) not null,
+primary key (lname),
+foreign key (airport_code) references airport(airport_code)
+);
+
+create table car_service (
+car_model varchar(30) not null,
+pick_up varchar(30),
+drop_off varchar(30),
+airport_code varchar(3) not null,
+primary key (car_model),
+foreign key (airport_code) references airport(airport_code)
 );
