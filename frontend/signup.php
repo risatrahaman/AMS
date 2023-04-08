@@ -10,12 +10,6 @@
 <body>
     <div class="hero">
         <div class="form-box">
-            <!-- <div class="button-box">
-                <div id="btn"></div>
-               
-               <button type="button" class="toggle-btn" onclick="register()">SIGN UP </button>
-            </div>-->
-            <!-- for signup -->
             <p style="text-align:center"> <?php echo $_GET['error']; ?> </p>
             <form id="register" class="input-group" method="post" action="../backend/signup-db.php">
                 <input name="uid" type="text" class="input-field" placeholder="User Name" required>

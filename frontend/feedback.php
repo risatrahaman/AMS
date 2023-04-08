@@ -20,6 +20,42 @@ if (!isset($_SESSION['cid'])){
 </head>
 <body>
   <div class="container">
+    <div class="navbar">
+      <ul>
+        <!-- entities according ER -->
+        <li><a href="#">Book Now</a></li>
+        <!-- for ticket -->
+        <li><a href="#">Book Now</a></li>
+        <!-- for flight -->
+        <li><a href="#">Flight</a></li>
+        <!-- car service -->
+        <li><a href="#">Car-Service</a></li>
+        <!-- help -->
+        <li><a href="./help.php">Help</a></li>
+        <!-- coupon -->
+        <li><a href="#">Coupon</a></li>
+        <!-- leisure -->
+        <li><a href="./leisure.php">Leisure</a></li>
+        <!-- login -->
+        <li><a href="./login.php">Login</a></li>
+        <!-- feedback -->
+        <li><a href="./feedback.php">Feedback</a></li>
+        <!-- signup -->
+        <li><a href="./signup.php">Signup</a></li>
+        
+        <div class="navbar-icon">
+          <a href="../backend/logout.php"><img src="./user.png" alt="">
+          <?php
+          session_start();
+          echo $_SESSION['cid'];
+          ?></a>
+          <!-- <img src="menu.png" alt=""> -->
+        </div>
+        
+      </ul>
+    </div>
+
+      
     <h1>Connect with Us</h1>
     
     <p>Thank you for reaching out to us. We appreciate your interest in our services and are here to help. 
