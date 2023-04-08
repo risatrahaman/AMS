@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['cid'])){
+  header("location:../frontend/login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +19,41 @@
 </head>
 <body>
     <div class="container">
-        <h1>Feature Airlines Leisure Activities</h1>
+        <div class="navbar">
+            <ul>
+                <!-- entities according ER -->
+                <li><a href="../index.php">Home</a></li>
+                <!-- for ticket -->
+                <li><a href="#">Book Now</a></li>
+                <!-- for flight -->
+                <li><a href="#">Flight</a></li>
+                <!-- car service -->
+                <li><a href="#">Car-Service</a></li>
+                <!-- help -->
+                <li><a href="./help.php">Help</a></li>
+                <!-- coupon -->
+                <li><a href="#">Coupon</a></li>
+                <!-- leisure -->
+                <li><a href="./leisure.php">Leisure</a></li>
+                <!-- login -->
+                <li><a href="./login.php">Login</a></li>
+                <!-- feedback -->
+                <li><a href="./feedback.php">Feedback</a></li>
+                <!-- signup -->
+                <li><a href="./signup.php">Signup</a></li>
+                
+                <div class="navbar-icon">
+                <a href="../backend/logout.php"><img src="./user.png" alt="">
+                <?php
+                session_start();
+                echo $_SESSION['cid'];
+                ?></a>
+                <!-- <img src="menu.png" alt=""> -->
+                </div>
+            
+            </ul>
+        </div>
+        <h1>Featherweight Airlines Leisure Activities</h1>
         <div class="row">
             <div class="service">
                 <form action="">
@@ -23,7 +65,7 @@
             <div class="service">
                 <form action="">
                     <h2>Vegetarian</h2>
-                    <p>At Feature Airlines, we understand and respect our passengers' dietary preferences. That's why we offer delicious vegetarian meals on board, including our popular Vegetable Curry with Rice. This flavorful blend of chickpeas, carrots, onions, and potatoes in a creamy coconut curry sauce is served with steamed rice for a satisfying and delicious meal. Thank you for choosing Feature Airlines, and we look forward to serving you</p>
+                    <p>At Featherweight Airlines, we understand and respect our passengers' dietary preferences. That's why we offer delicious vegetarian meals on board, including our popular Vegetable Curry with Rice. This flavorful blend of chickpeas, carrots, onions, and potatoes in a creamy coconut curry sauce is served with steamed rice for a satisfying and delicious meal. Thank you for choosing Featherweight Airlines, and we look forward to serving you</p>
                     <button type="button" class="submit-btn">Select</button>
                 </form>    
             </div>
