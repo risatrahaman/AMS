@@ -108,6 +108,13 @@ primary key (car_model),
 foreign key (airport_code) references airport(airport_code)
 );
 
+create table schedule (
+fid int not null,
+f_date date,
+f_time time,
+foreign key (fid) references flight(fid)
+);
+
 INSERT INTO users VALUES
 (1, 'Michael', 'Scott', 01123456789, 'Scranton', 'prison_mike@gmail.com', 'azkaban'),
 (2, 'Jim', 'Halpert', 01223456789, 'Utica', 'phillyjim@gmail.com', 'baseball'),
