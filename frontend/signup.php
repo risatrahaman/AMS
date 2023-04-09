@@ -1,38 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <link rel="stylesheet" href="login&signupstyles.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="hero">
-        <div class="form-box">
-            <p style="text-align:center"> <?php echo $_GET['error']; ?> </p>
-            <form id="register" class="input-group" method="post" action="../backend/signup-db.php">
+    <nav>
+        <ul>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="#">Book Now</a></li>
+            <li><a href="#">Flight</a></li>
+            <li><a href="#">Car-Service</a></li>
+            <li><a href="#">Coupon</a></li>
+            <li><a href="./leisure.php">Leisure</a></li>
+            <li><a href="./help.php">Help</a></li>
+            <li><a href="./feedback.php">Feedback</a></li>
+            <li><a href="./login.php">Login</a></li>
+            <li><a href="./signup.php">Signup</a></li>
+            <li><a href="../backend/logout.php">Logout</a></li>
+            <li>
+            <?php
+                session_start();
+                if (!empty($_SESSION['cid'])){
+                echo $_SESSION['cid'];
+                }
+                else if (!empty($_SESSION['aid'])){
+                echo $_SESSION['aid'];
+                }
+            ?>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <div id="form-box">
+        <p id="error" style="text-align:center"> 
+            <?php 
+            if (isset($_GET['error'])){
+                echo $_GET['error'];} 
+            ?>
+        </p>
+
+        <form method="post" action="../backend/signup-db.php">
+            <div>
+                <label>User Name: </label>
                 <input name="uid" type="text" class="input-field" placeholder="User Name" required>
+            </div>
+            <div>
+                <label>First Name: </label>
                 <input name="fname" type="text" class="input-field" placeholder="First Name" required>
+            </div>
+            <div>
+                <label>Last Name: </label>
                 <input name="lname" type="text" class="input-field" placeholder="Last Name" required>
+            </div>
+            <div>
+                <label>Phone: </label>
                 <input name="phone" type="text" class="input-field" placeholder="Phone Number" required>
+            </div>
+            <div>
+                <label>Address: </label>
                 <input name="address" type="text" class="input-field" placeholder="Address" required>
+            </div>
+            <div>
+                <label>Email: </label>
                 <input name="email" type="email" class="input-field" placeholder="Email" required>
+            </div>
+            <div>
+                <label>Password: </label>
                 <input name="pass" type="password" class="input-field" placeholder="Password" required>
-                <select name="userType" id="">
+            </div>
+            
+            
+            <div id="term">
+                <select name="userMode" id="user-mode">
                     <option value="Customer">Customer</option>
                     <option value="Admin">Admin</option>
                 </select>
-                <input type="checkbox" class="check-box" required><span>I agree to the terms & conditions</span>
-                <button type="submit" class="submit-btn">Sign Up</button>
-                <p>Already have an account. <a href="./login.php">Log in</a></p>
-            </form>
-        </div>
-
+                <input type="checkbox" id="check-box" required><span> I agree to the terms & conditions</span>
+            </div>
+            
+            
+            <button type="submit" id="submit-btn">Sign Up</button>
+            <p id="account-exists">Already have an account: <a href="./login.php">Log in</a></p>
+        </form>
     </div>
-
-
-
 
 </body>
 </html>
