@@ -8,6 +8,7 @@
     $cid = $_SESSION['cid'];
     $date = date("Y-m-d");
 
+    session_start();
     mysqli_query($conn, "insert into feedback(cid, feed_date, description) values('$cid', '$date', '$feedback')");
 
     echo "We have received your feedback. Thank you $name!";
