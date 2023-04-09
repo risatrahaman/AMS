@@ -16,24 +16,31 @@
     $result3 = mysqli_query($conn, "select aid from admin where uid='$row1[0]'");
     $admin = mysqli_fetch_array($result3);
 
+    # Check if there is any row with the user id in the user table
     if ($result1->num_rows == 0){
         header("location:../frontend/login.php?error=User not found");
         exit;
     }
+    # If row exists then verify password
     else{
         if (password_verify($pass, $row1[1])){
             
             session_start();
 
+            # if the user is customer set session to customer
             if (!empty($customer[0])){
                 $_SESSION['cid'] = $customer[0];
             }
+            # if the user is admin set session to admin
             else if (!empty($admin[0])){
                 $_SESSION['aid'] = $admin[0];
             }
             
+            # Go to homepage
             header("location:../index.php");
-        }else{
+        }
+        # If password is incorrect, show incorrect password
+        else{
             header("location:../frontend/login.php?error=Password incorrect");
         }
     }

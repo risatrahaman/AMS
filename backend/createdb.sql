@@ -115,13 +115,6 @@ f_time time,
 foreign key (fid) references flight(fid)
 );
 
-INSERT INTO user VALUES
-(1, 'Michael', 'Scott', 01123456789, 'Scranton', 'prison_mike@gmail.com', 'azkaban'),
-(2, 'Jim', 'Halpert', 01223456789, 'Utica', 'phillyjim@gmail.com', 'baseball'),
-(3, 'Pam', 'Beesley', 01323456789, 'New York', 'artistpam@gmail.com', 'artislife'),
-(4, 'Dwight', 'Schrute', 01423456789, 'Vermont', 'beetfarmer@gmail.com', 'battlestar'),
-(5, 'Kelly', 'Kapoor', 01523456789, 'New Jersey', 'glamkelly@gmail.com', 'ryanfire');
-
 INSERT INTO airport VALUES
 ('DAC', 'Hazrat Shahjalal Airport', 'Chittagong'),
 ('CTG', 'Shah Amanat Airport', 'Sylhet'),
