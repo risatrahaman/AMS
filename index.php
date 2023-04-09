@@ -3,7 +3,7 @@
 <head>
   <!-- font link -->
   
-  <link rel="stylesheet" href="./frontend/indexstyles.css">
+  <link rel="stylesheet" href="./frontend/css/indexstyles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400;1,800&display=swap" rel="stylesheet">
