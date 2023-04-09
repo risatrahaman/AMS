@@ -40,7 +40,7 @@
       </ul>
       <!-- logout -->
       <div class="navbar-icon">
-        <a href="./backend/logout.php"><img src="./frontend/user.png" alt="">
+        <a href="./backend/logout.php"><img src="./frontend/img/user.png" alt="">
         <?php
         session_start();
         if (!empty($_SESSION['cid'])){
@@ -72,7 +72,7 @@
 
 
       <div class="right-column"> 
-        <img src="./frontend/bg2.png" alt="">
+        <img src="./frontend/img/bg2.png" alt="">
       </div>
 
     </div>

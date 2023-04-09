@@ -9,7 +9,7 @@ if (!isset($_SESSION['cid'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="feedbackstyles.css">
+    <link rel="stylesheet" href="./css/feedbackstyles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400;1,800&display=swap" rel="stylesheet">
@@ -46,8 +46,13 @@ if (!isset($_SESSION['cid'])){
         <div class="navbar-icon">
           <a href="../backend/logout.php"><img src="./user.png" alt="">
           <?php
-          session_start();
-          echo $_SESSION['cid'];
+          if(!isset($_SESSION)) 
+          { 
+            session_start(); 
+          } 
+          if (isset($_SESSION['cid'])){
+            echo $_SESSION['cid'];
+          }
           ?></a>
           <!-- <img src="menu.png" alt=""> -->
         </div>

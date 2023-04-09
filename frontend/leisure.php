@@ -9,7 +9,7 @@ if (!isset($_SESSION['cid'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="leisurestyles.css">
+    <link rel="stylesheet" href="./css/leisurestyles.css">
     <script src="https://kit.fontawesome.com/46cc3b8a50.js" crossorigin="anonymous"></script>
     
     <meta charset="UTF-8">
@@ -45,8 +45,13 @@ if (!isset($_SESSION['cid'])){
                 <div class="navbar-icon">
                 <a href="../backend/logout.php"><img src="./user.png" alt="">
                 <?php
-                session_start();
-                echo $_SESSION['cid'];
+                if(!isset($_SESSION)) 
+                { 
+                    session_start(); 
+                } 
+                if (isset($_SESSION['cid'])){
+                    echo $_SESSION['cid'];
+                }
                 ?></a>
                 <!-- <img src="menu.png" alt=""> -->
                 </div>

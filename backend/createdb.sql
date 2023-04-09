@@ -1,6 +1,6 @@
 create database ams;
 
-create table users(
+create table user (
 uid varchar(10),
 fname varchar(30),
 lname varchar(30),
@@ -15,7 +15,7 @@ create table admin (
 uid varchar(10) not null,
 aid varchar(10) not null,
 primary key (aid),
-foreign key (uid) references users(uid)
+foreign key (uid) references user(uid)
 );
 
 create table customer (
@@ -24,7 +24,7 @@ cid varchar(10) not null,
 distance_covered int,
 type varchar(10),
 primary key (cid),
-foreign key (uid) references users(uid)
+foreign key (uid) references user(uid)
 );
 
 create table airport (
@@ -114,13 +114,6 @@ f_date date,
 f_time time,
 foreign key (fid) references flight(fid)
 );
-
-INSERT INTO users VALUES
-(1, 'Michael', 'Scott', 01123456789, 'Scranton', 'prison_mike@gmail.com', 'azkaban'),
-(2, 'Jim', 'Halpert', 01223456789, 'Utica', 'phillyjim@gmail.com', 'baseball'),
-(3, 'Pam', 'Beesley', 01323456789, 'New York', 'artistpam@gmail.com', 'artislife'),
-(4, 'Dwight', 'Schrute', 01423456789, 'Vermont', 'beetfarmer@gmail.com', 'battlestar'),
-(5, 'Kelly', 'Kapoor', 01523456789, 'New Jersey', 'glamkelly@gmail.com', 'ryanfire');
 
 INSERT INTO airport VALUES
 ('DAC', 'Hazrat Shahjalal Airport', 'Chittagong'),
