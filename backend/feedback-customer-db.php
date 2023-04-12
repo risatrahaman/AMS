@@ -1,6 +1,8 @@
 <?php
     
     require_once("dbconnect.php");
+
+    session_start();
     
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -8,9 +10,9 @@
     $cid = $_SESSION['cid'];
     $date = date("Y-m-d");
 
-    session_start();
+    
     mysqli_query($conn, "insert into feedback(cid, feed_date, description) values('$cid', '$date', '$feedback')");
 
-    echo "We have received your feedback. Thank you $name!";
+    header("location:../frontend/feedback-customer.php?accepted=Thank You $cid");
 
 ?>

@@ -5,13 +5,13 @@
 
 body{
     background:#f5f8ff;
-    font-size: 14px;
     font-family: 'Poppins', sans-serif;
 }
 
 .container{
     width:80%;
-    margin: 50px auto;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 .contact-box{
     background:#fff;
@@ -32,10 +32,10 @@ body{
 
 /* spaceing title */
 h1{
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 .container p{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .input-row{
@@ -45,7 +45,7 @@ h1{
     
 }
 .input-row .input-group{
-    flex-basis: 40%;
+    flex-basis: 45%;
 }
 input{
     width: 100%;
@@ -104,39 +104,21 @@ tr td:nth-child(2){
     
 }
 
-ul{
-    flex: 1;
+nav{
     text-align: right;
 }
-
-ul li{
-    display: inline-block;
-    list-style-type: none;
-    margin: 0 25px;
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
 }
-
-ul li a{
+nav li{
+    margin-bottom: 15px;
+    padding: 0 20px;
+    margin-top: 5px;
+}
+nav ul li a{
+    border-top: 10px solid #f14a60;
+    color: black;
     text-decoration: none;
-    color:#000;
-    padding: 0 2px;
-    position: relative;
-}
-
-ul li a::after{
-    content:'';
-    width:100%;
-    height: 10px;
-    background:#de374d;
-    position: absolute;
-    /* for allingnment */
-    left: 50%;
-    transform: translateX(-50%);
-    top: -55px;
-    transition: 0.5s;
-
-}
-
-/* hide it only show when cursor is there */
-ul li a:hover::after{
-    width: 100%;
 }
