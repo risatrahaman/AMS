@@ -14,11 +14,11 @@
             <li><a href="#">Book Now</a></li>
             <li><a href="#">Flight</a></li>
             <li><a href="#">Car-Service</a></li>
-            <li><a href="#">Coupon</a></li>
+            <li><a href="./coupon.php">Coupon</a></li>
             <li><a href="./leisure.php">Leisure</a></li>
             <li><a href="./help.php">Help</a></li>
             <li><a href="./feedback.php">Feedback</a></li>
-            <li><a href="./login.php">Login</a></li>
+            <li id="current"><a href="./login.php">Login</a></li>
             <li><a href="./signup.php">Signup</a></li>
             <li><a href="../backend/logout.php">Logout</a></li>
             <li>

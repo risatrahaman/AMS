@@ -27,29 +27,3 @@ nav ul li a{
 #current{
     border-top: 5px solid #f14a60;
 }
-
-
-table, .feedbacks, .column{
-    border: 1px solid black;
-}
-
-.column{
-    padding: 5px 10px;
-}
-
-#feedback-box{
-    background-color: #FCC8D1;
-    margin: auto;
-    margin-top: 100px;
-    margin-bottom: 20px;
-}
-
-#delete, button{
-    background-color: orange;
-}
-
-#delete button{
-    border: none;
-    font-family: 'Poppins', sans-serif;
-}
-
