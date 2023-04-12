@@ -3,7 +3,7 @@
 <head>
   <!-- font link -->
   
-  <link rel="stylesheet" href="./frontend/css/indexstyles.css">
+  <link rel="stylesheet" href="./frontend/css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400;1,800&display=swap" rel="stylesheet">
@@ -13,11 +13,9 @@
  
 </head>
 <body>
-  <div class="hero">
-    <div class="navbar">
+  <nav>
       <ul>
         <!-- entities according ER -->
-
         <!-- for ticket -->
         <li><a href="#">Book Now</a></li>
         <!-- for flight -->
@@ -27,7 +25,7 @@
         <!-- help -->
         <li><a href="./frontend/help.php">Help</a></li>
         <!-- coupon -->
-        <li><a href="#">Coupon</a></li>
+        <li><a href="./frontend/coupon.php">Coupon</a></li>
         <!-- leisure -->
         <li><a href="./frontend/leisure.php">Leisure</a></li>
         <!-- login -->
@@ -36,25 +34,20 @@
         <li><a href="./frontend/feedback.php">Feedback</a></li>
         <!-- signup -->
         <li><a href="./frontend/signup.php">Signup</a></li>
-        
-      </ul>
-      <!-- logout -->
-      <div class="navbar-icon">
-        <a href="./backend/logout.php"><img src="./frontend/img/user.png" alt="">
-        <?php
-        session_start();
-        if (!empty($_SESSION['cid'])){
-          echo $_SESSION['cid'];
+        <li><a href="./backend/logout.php">Logout</a></li>
+        <li><?php 
+          session_start();
+          if (!empty($_SESSION['cid'])){
+            echo $_SESSION['cid'];
+          }
+          else if (!empty($_SESSION['aid'])){
+            echo $_SESSION['aid'];
         }
-        else if (!empty($_SESSION['aid'])){
-          echo $_SESSION['aid'];
-      }
-        ?></a>
-        <!-- <img src="menu.png" alt=""> -->
-
-      </div>
-    </div>
-
+        ?></li>
+      </ul>
+    </nav>
+  
+    <div class="hero">
     <div class="banner">
       <div class="left-column">
         <h1>Featherweight<span> Airlines</span></h1>
