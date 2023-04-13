@@ -85,10 +85,10 @@ foreign key (cid) references customer(cid)
 create table coupon (
 coupon_code char(5) not null,
 validity date,
-type varchar(10),
-cid varchar(10) not null,
+type varchar(20),
+aid varchar(10) not null,
 primary key(coupon_code),
-foreign key (cid) references customer(cid)
+foreign key (aid) references admin(aid)
 );
 
 create table leisure (

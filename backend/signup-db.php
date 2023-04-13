@@ -14,8 +14,8 @@
     $userMode = $_POST['userMode'];
     
     
-    $result1 = mysqli_query($conn, "select uid from user where uid='$uid'");
-    $result2 = mysqli_query($conn, "select email from user where email='$email'");
+    $result1 = mysqli_query($conn, "SELECT uid FROM user WHERE uid='$uid'");
+    $result2 = mysqli_query($conn, "SELECT email FROM user WHERE email='$email'");
     
     # Check if there is any row with same user id
     if ($result1->num_rows != 0){
@@ -27,17 +27,17 @@
         header("Location: ../frontend/signup.php?error=Email already exists");
         exit;
     }
-    # Otherwise insert the user in the user table
+    # Otherwise INSERT the user in the user table
     else{
-        mysqli_query($conn, "insert into user values('$uid', '$fname', '$lname', '$phone', '$address', '$email', '$encryptedPass')");
+        mysqli_query($conn, "INSERT INTO user VALUES('$uid', '$fname', '$lname', '$phone', '$address', '$email', '$encryptedPass')");
         
-        # Either inserting in customer table
+        # Either INSERTing in customer table
         if ($userMode == 'Customer'){
-            mysqli_query($conn, "insert into customer values('$uid', 'C-$uid', 0, 'regular')");
+            mysqli_query($conn, "INSERT INTO customer VALUES('$uid', 'C-$uid', 0, 'regular')");
         }
-        # Or inserting in admin table
+        # Or INSERTing in admin table
         else if ($userMode == 'Admin'){
-            mysqli_query($conn, "insert into admin values('$uid', 'A-$uid')");
+            mysqli_query($conn, "INSERT INTO admin VALUES('$uid', 'A-$uid')");
         }
     }
 
