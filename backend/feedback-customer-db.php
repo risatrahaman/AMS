@@ -11,7 +11,7 @@
     $date = date("Y-m-d");
 
     
-    mysqli_query($conn, "insert into feedback(cid, feed_date, description) values('$cid', '$date', '$feedback')");
+    mysqli_query($conn, "INSERT INTO feedback(cid, feed_date, description) VALUES('$cid', '$date', '$feedback')");
 
     header("location:../frontend/feedback-customer.php?accepted=Thank You $cid");
 

@@ -15,26 +15,17 @@
 <body>
   <nav>
       <ul>
-        <!-- entities according ER -->
-        <!-- for ticket -->
-        <li><a href="#">Book Now</a></li>
-        <!-- for flight -->
-        <li><a href="#">Flight</a></li>
-        <!-- car service -->
-        <li><a href="#">Car-Service</a></li>
-        <!-- help -->
-        <li><a href="./frontend/help.php">Help</a></li>
-        <!-- coupon -->
-        <li><a href="./frontend/coupon.php">Coupon</a></li>
-        <!-- leisure -->
-        <li><a href="./frontend/leisure.php">Leisure</a></li>
-        <!-- login -->
-        <li><a href="./frontend/login.php">Login</a></li>
-        <!-- feedback -->
-        <li><a href="./frontend/feedback.php">Feedback</a></li>
-        <!-- signup -->
-        <li><a href="./frontend/signup.php">Signup</a></li>
-        <li><a href="./backend/logout.php">Logout</a></li>
+        <li><a href="../index.php">Home</a></li>
+          <li><a href="#">Book Now</a></li>
+          <li><a href="#">Flight</a></li>
+          <li><a href="#">Car-Service</a></li>
+          <li><a href="./frontend/coupon.php">Coupon</a></li>
+          <li><a href="./frontend/leisure.php">Leisure</a></li>
+          <li><a href="./frontend/help.php">Help</a></li>
+          <li id="current"><a href="./frontend/feedback.php">Feedback</a></li>
+          <li><a href="./frontend/login.php">Login</a></li>
+          <li><a href="./frontend/signup.php">Signup</a></li>
+          <li><a href="./backend/logout.php">Logout</a></li>
         <li><?php 
           session_start();
           if (!empty($_SESSION['cid'])){
