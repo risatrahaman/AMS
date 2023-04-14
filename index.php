@@ -17,7 +17,7 @@
       <ul>
         <li><a href="../index.php">Home</a></li>
           <li><a href="#">Book Now</a></li>
-          <li><a href="#">Flight</a></li>
+          <li><a href="./frontend/flight-customer.php">Flight</a></li>
           <li><a href="#">Car-Service</a></li>
           <li><a href="./frontend/coupon.php">Coupon</a></li>
           <li><a href="./frontend/leisure.php">Leisure</a></li>
@@ -27,11 +27,13 @@
           <li><a href="./frontend/signup.php">Signup</a></li>
           <li><a href="./backend/logout.php">Logout</a></li>
         <li><?php 
-          session_start();
-          if (!empty($_SESSION['cid'])){
+          if (!isset($_SESSION)){
+            session_start();
+          }
+          if (isset($_SESSION['cid'])){
             echo $_SESSION['cid'];
           }
-          else if (!empty($_SESSION['aid'])){
+          else if (isset($_SESSION['aid'])){
             echo $_SESSION['aid'];
         }
         ?></li>

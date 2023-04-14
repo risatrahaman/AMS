@@ -15,7 +15,7 @@
       <ul>
           <li><a href="../index.php">Home</a></li>
           <li><a href="#">Book Now</a></li>
-          <li><a href="#">Flight</a></li>
+          <li><a href="./flight-customer.php">Flight</a></li>
           <li><a href="#">Car-Service</a></li>
           <li><a href="./coupon.php">Coupon</a></li>
           <li><a href="./leisure.php">Leisure</a></li>

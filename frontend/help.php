@@ -9,7 +9,7 @@ if (!isset($_SESSION['cid'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./css/hstyles.css">    
+    <link rel="stylesheet" href="./css/help.css">    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,56 +20,35 @@ if (!isset($_SESSION['cid'])){
 
 </head>
 <body>
+    <nav>
+    <ul>
+        <li><a href="../index.php">Home</a></li>
+          <li><a href="#">Book Now</a></li>
+          <li><a href="./flight-customer.php">Flight</a></li>
+          <li><a href="#">Car-Service</a></li>
+          <li><a href="./coupon.php">Coupon</a></li>
+          <li><a href="./leisure.php">Leisure</a></li>
+          <li id="current"><a href="./help.php">Help</a></li>
+          <li><a href="./feedback.php">Feedback</a></li>
+          <li><a href="./login.php">Login</a></li>
+          <li><a href="./signup.php">Signup</a></li>
+          <li><a href="../backend/logout.php">Logout</a></li>
+        <li><?php 
+          if (!isset($_SESSION)){
+            session_start();
+          }
+          if (isset($_SESSION['cid'])){
+            echo $_SESSION['cid'];
+          }
+          else if (isset($_SESSION['aid'])){
+            echo $_SESSION['aid'];
+        }
+        ?></li>
+      </ul>
+    </nav>
     <div class="container">
-        <div class="navbar">
-            <ul>
-                <!-- entities according ER -->
-                <li><a href="../index.php">Home</a></li>
-                <!-- for ticket -->
-                <li><a href="#">Book Now</a></li>
-                <!-- for flight -->
-                <li><a href="#">Flight</a></li>
-                <!-- car service -->
-                <li><a href="#">Car-Service</a></li>
-                <!-- help -->
-                <li><a href="./help.php">Help</a></li>
-                <!-- coupon -->
-                <li><a href="#">Coupon</a></li>
-                <!-- leisure -->
-                <li><a href="./leisure.php">Leisure</a></li>
-                <!-- login -->
-                <li><a href="./login.php">Login</a></li>
-                <!-- feedback -->
-                <li><a href="./feedback.php">Feedback</a></li>
-                <!-- signup -->
-                <li><a href="./signup.php">Signup</a></li>
-                <div class="navbar-icon">
-                <a href="../backend/logout.php"><img src="./user.png" alt="">
-                <?php
-                if(!isset($_SESSION)) 
-                { 
-                    session_start(); 
-                } 
-                if (isset($_SESSION['cid'])){
-                    echo $_SESSION['cid'];
-                }
-                ?></a>
-            </ul>
-            <!-- <img src="menu.png" alt=""> -->
-        </div>
         
         <h1>Help and Services</h1>
-
-        <h2>How may we help?</h2>
-        <form method="get" action="../backend/help-db.php">
-            <select name="hname">
-                <option value="Lost Baggage">Lost Baggage</option>
-                <option value="Change Schedule">Change Schedule</option>
-                <option value="Cancel Flight">Cancel Flight</option>
-            </select>
-            <button type="submit">Request</button>
-        </form>
-
         <h2>Frequently Asked Questions</h2>
         <div class='tab'>
             <input type="radio" name="acc" id="1">
@@ -121,7 +100,13 @@ if (!isset($_SESSION['cid'])){
                  we will make every effort to notify you as soon as possible and provide you with options for rebooking or receiving a refund.</p></div>
         </div>
 
-
+    <h3>Request Help</h3>
+    <form method="post" action="../backend/help-submit-db.php">
+        <select name="hid">
+            <?php include("../backend/help-customer-db.php") ?>
+        </select>
+        <button type="submit">Request</button>
+    </form>              
     </div>
 </body>
 </html>
