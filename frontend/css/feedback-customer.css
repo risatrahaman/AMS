@@ -13,7 +13,7 @@
     background:#fff;
     display: flex;
 }
-/* seperate colum */
+/* seperate column */
 .contact-left{
     flex-basis: 60%;
     padding: 40px 60px;
@@ -26,7 +26,7 @@
     color:#fff;
 }
 
-/* spaceing title */
+/* spacing title */
 h1{
     margin-bottom: 1px;
 }
@@ -85,14 +85,11 @@ button{
     font-weight: 600;
     margin-bottom: 30px;
 }
-/* first child means only applicable for the first data in the row */
+
 tr td:first-child{
     padding-right: 20px;
-
-}
-tr td:first-child{
     padding-top: 20px;
-    
+
 }
 
 tr td:nth-child(2){

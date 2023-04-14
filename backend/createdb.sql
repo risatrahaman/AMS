@@ -59,14 +59,14 @@ foreign key (fid) references flight(fid)
 );
 
 create table help (
-hid int auto_increment,
+hid varchar(4),
 htype varchar(50),
 primary key (hid)
 );
 
 create table ask (
 cid varchar(10) not null,
-hid int not null,
+hid varchar(4) not null,
 hdate date,
 htime time,
 foreign key (cid) references customer(cid),
