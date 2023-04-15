@@ -65,3 +65,17 @@ button{
     height: 35px;
     border-radius: 30px;
 }
+
+h3{
+    text-align: center;
+    margin: 20px 0;
+}
+#flight-schedule{
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+#flight-schedule td, tr{
+    border: 1px solid black;
+    padding: 0 20px;
+}

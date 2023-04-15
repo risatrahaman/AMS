@@ -1,9 +1,11 @@
-
+*{
+    font-family: 'Poppins', sans-serif;
+}
 body{
     align-items: center;
     min-height: 100vh;
     background: #f5f8ff;
-    font-family: 'Poppins', sans-serif;
+    
 }
 .container {
     margin: 0 40px;
@@ -149,7 +151,7 @@ nav ul li a{
 
 form{
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     
 }
 form select{
@@ -162,4 +164,9 @@ button{
     color: white;
     border: none;
     height: 30px;
+}
+
+#help-title{
+    text-align: center;
+    margin-bottom: -10px;
 }

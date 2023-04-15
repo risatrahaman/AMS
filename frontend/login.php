@@ -11,19 +11,33 @@
     <nav>
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="#">Book Now</a></li>
-            <li><a href="./flight-customer.php">Flight</a></li>
-            <li><a href="#">Car-Service</a></li>
+            <?php
+                if(!isset($_SESSION)){
+                  session_start();
+                }
+                if (!isset($_SESSION['aid'])){
+                    ?>
+                    <li><a href="./ticket-customer.php">Ticket</a></li>
+                    <li><a href="./flight-customer.php">Flight</a></li>
+                    <li><a href="./car-service.php">Car-Service</a></li>
+                    <?php
+                }
+            ?>
             <li><a href="./coupon.php">Coupon</a></li>
-            <li><a href="./leisure.php">Leisure</a></li>
-            <li><a href="./help.php">Help</a></li>
+            <?php
+                if (!isset($_SESSION['aid'])){
+                    ?>
+                    <li><a href="./leisure.php">Leisure</a></li>
+                    <li><a href="./help.php">Help</a></li>
+                    <?php
+                }
+            ?>
             <li><a href="./feedback.php">Feedback</a></li>
             <li id="current"><a href="./login.php">Login</a></li>
             <li><a href="./signup.php">Signup</a></li>
             <li><a href="../backend/logout.php">Logout</a></li>
             <li>
             <?php
-                session_start();
                 if (!empty($_SESSION['cid'])){
                 echo $_SESSION['cid'];
                 }

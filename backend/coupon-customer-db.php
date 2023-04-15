@@ -11,6 +11,7 @@
         header("location:../frontend/coupon-customer.php?enter=Code is either invalid or expired");
     }else{
         $row = mysqli_fetch_array($result);
+        mysqli_query($conn, "DELETE FROM coupon WHERE coupon_code='$code'");
         header("location:../frontend/coupon-customer.php?enter=Congratulations! You got $row[0]!");
     }
 

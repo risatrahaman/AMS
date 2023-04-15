@@ -14,9 +14,9 @@
   <nav>
       <ul>
           <li><a href="../index.php">Home</a></li>
-          <li><a href="#">Book Now</a></li>
+          <li><a href="./ticket-customer.php">Ticket</a></li>
           <li><a href="./flight-customer.php">Flight</a></li>
-          <li><a href="#">Car-Service</a></li>
+          <li><a href="./car-service.php">Car-Service</a></li>
           <li><a href="./coupon.php">Coupon</a></li>
           <li><a href="./leisure.php">Leisure</a></li>
           <li><a href="./help.php">Help</a></li>

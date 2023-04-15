@@ -23,9 +23,9 @@ if (!isset($_SESSION['cid'])){
     <nav>
     <ul>
         <li><a href="../index.php">Home</a></li>
-          <li><a href="#">Book Now</a></li>
+          <li><a href="./ticket-customer.php">Ticket</a></li>
           <li><a href="./flight-customer.php">Flight</a></li>
-          <li><a href="#">Car-Service</a></li>
+          <li><a href="./car-service.php">Car-Service</a></li>
           <li><a href="./coupon.php">Coupon</a></li>
           <li><a href="./leisure.php">Leisure</a></li>
           <li id="current"><a href="./help.php">Help</a></li>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['cid'])){
                  we will make every effort to notify you as soon as possible and provide you with options for rebooking or receiving a refund.</p></div>
         </div>
 
-    <h3>Request Help</h3>
+    <h3 id="help-title">Request Help</h3>
     <form method="post" action="../backend/help-submit-db.php">
         <select name="hid">
             <?php include("../backend/help-customer-db.php") ?>

@@ -26,6 +26,9 @@
         if (password_verify($pass, $row1[1])){
             
             session_start();
+            
+            $_SESSION['cid'] = null;
+            $_SESSION['aid'] = null;
 
             # if the user is customer set session to customer
             if (!empty($customer[0])){

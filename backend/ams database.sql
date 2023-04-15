@@ -31,7 +31,7 @@ create table airport (
 airport_code varchar(3) not null,
 airport_name varchar(50) not null,
 destination varchar(30) not null,
-primary key (airport_code)
+primary key (airport_code, destination)
 );
 
 create table flight (
@@ -50,7 +50,7 @@ fid int not null,
 discount int,
 payment int,
 seat_type varchar(10) not null,
-cid int not null,
+cid varchar(10) not null,
 book_date date not null,
 fdate date,
 ftime time,
@@ -104,7 +104,7 @@ car_model varchar(30) not null,
 pick_up varchar(30),
 drop_off varchar(30),
 airport_code varchar(3) not null,
-primary key (car_model),
+primary key (car_model, pick_up, drop_off),
 foreign key (airport_code) references airport(airport_code)
 );
 
@@ -115,7 +115,44 @@ f_time time,
 foreign key (fid) references flight(fid)
 );
 
+create table aircraft(
+fid int not null,
+plane_model varchar(15),
+destination varchar(30),
+primary key (plane_model),
+foreign key (fid) references flight(fid)
+);
+
 INSERT INTO airport VALUES
-('DAC', 'Hazrat Shahjalal Airport', 'Chittagong'),
-('CTG', 'Shah Amanat Airport', 'Sylhet'),
-('JES', 'Jashore Airport', 'Syedpur');
+('DAC', 'Hazrat Shahjalal Airport', 'Shah Amanat Airport'),
+('DAC', 'Hazrat Shahjalal Airport', 'Barisal Airport'),
+('CGP', 'Shah Amanat Airport', 'Hazrat Shahjalal Airport'),
+('CGP', 'Shah Amanat Airport', 'Barisal Airport'),
+('BZL', 'Barisal Airport', 'Hazrat Shahjalal Airport'),
+('BZL', 'Barisal Airport', 'Shah Amanat Airport');
+
+INSERT INTO flight VALUES
+(1, 500, 1000, 100, 'DAC'),
+(2, 500, 1000, 100, 'DAC'),
+(3, 500, 1000, 100, 'CGP'),
+(4, 500, 1000, 100, 'CGP'),
+(5, 500, 1000, 100, 'BZL'),
+(6, 500, 1000, 100, 'BZL');
+
+INSERT INTO schedule VALUES
+(1, '2023-04-16', '12:00:00'),
+(2, '2023-04-16', '14:00:00'),
+(3, '2023-04-17', '12:00:00'),
+(4, '2023-04-17', '14:00:00'),
+(5, '2023-04-17', '12:00:00'),
+(6, '2023-04-17', '14:00:00');
+
+INSERT INTO aircraft VALUES
+(1, 'Boeing777', 'Dhaka'),
+(2, 'Boeing747', 'Barisal'),
+(3, 'Boeing727', 'Chittagong');
+
+INSERT INTO help VALUES
+('H-1', 'Lost Baggage'),
+('H-2', 'Change Schedule'),
+('H-3', 'Cancel FLight');

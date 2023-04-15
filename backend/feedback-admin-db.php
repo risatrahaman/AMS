@@ -9,16 +9,16 @@ if ($result->num_rows > 0){
     while ($rows = mysqli_fetch_array($result)){
 ?>
         <tr class="feedbacks">
-            <th class="column"><?php echo "$rows[0]"; ?></th>
-            <th class="column"><?php echo "$rows[2]"; ?></th>
-            <th class="column"><?php echo "$rows[3]"; ?></th>
-            <th class="column" id="delete">
-                <form action="../backend/delete-feedback-db.php" method="get">
+            <td class="column"><?php echo "$rows[0]"; ?></td>
+            <td class="column"><?php echo "$rows[2]"; ?></td>
+            <td class="column"><?php echo "$rows[3]"; ?></td>
+            <td class="column" id="delete">
+                <form action="../backend/delete-feedback-db.php" metdod="get">
                     <input type="hidden" name="fid" value="<?php echo $rows[1] ?>">
                     <button type="submit">Delete</button>
                 </form>
                 
-            </th>
+            </td>
         </tr>
 <?php
     } 

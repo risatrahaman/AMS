@@ -19,9 +19,9 @@ if (!isset($_SESSION['cid'])){
     <nav>
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="#">Book Now</a></li>
+            <li><a href="./ticket-customer.php">Ticket</a></li>
             <li id="current"><a href="./flight-customer.php">Flight</a></li>
-            <li><a href="#">Car-Service</a></li>
+            <li><a href="./car-service.php">Car-Service</a></li>
             <li><a href="./coupon.php">Coupon</a></li>
             <li><a href="./leisure.php">Leisure</a></li>
             <li><a href="./help.php">Help</a></li>
@@ -32,8 +32,8 @@ if (!isset($_SESSION['cid'])){
         </ul>
     </nav>
     <div class="container">
-        <h1>Search for a flight</h1>
-        <form action="">
+        <h1>Book a flight</h1>
+        <form action="../backend/flight-book-db.php" method="post">
             <div id="type">
                 <select name="trip-type" id="trip-type">
                     <option value="oneWay">One Way</option>
@@ -53,17 +53,31 @@ if (!isset($_SESSION['cid'])){
             <div id="fly">
                 <select name="from" id="from" required>
                     <option disabled selected hidden>From</option>
+                    <option value="DAC">Dhaka (DAC)</option>
+                    <option value="CGP">Chittagong (CGP)</option>
+                    <option value="BZL">Barishal (BZL)</option>
                 </select>
                 <input name="flight-date" type="date" required>
                 <select name="to" id="to" required>
                     <option disabled selected hidden>To</option>
+                    <option value="Shah Amanat Airport">Chittagong (CGP)</option>
+                    <option value="Barisal Airport">Barishal (BZL)</option>
+                    <option value="Hazrat Shahjalal Airport">Dhaka (DAC)</option>
                 </select>
                 <input name="reach-date" type="date" required>
             </div>
             <button type="submit">Book</button>
         </form>
-          
-        
+        <h3>Current Flight Schedule</h3>
+        <table id="flight-schedule">
+            <tr>
+                <th>Current Airport</th>
+                <th>Desination Airport</th>
+                <th>Departure Date</th>
+                <th>Departure Time</th>
+            </tr>
+            <?php include("../backend/flight-customer-db.php")?>
+        </table>
     </div>
 </body>
 </html>

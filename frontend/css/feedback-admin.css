@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Lucida Sans';
 }
 
 nav ul{
@@ -24,6 +24,10 @@ nav ul li a{
     border-bottom: 5px solid #f14a60;
 }
 
+h1{
+    margin-left: 20px;
+    
+}
 
 table, .feedbacks, .column{
     border: 1px solid black;

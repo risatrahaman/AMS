@@ -7,7 +7,6 @@
         while ($rows = mysqli_fetch_array($result)){
             $hid = $rows[0];
             $htype = $rows[1];
-            echo $hid;
     ?>
 
     <option value="<?php echo $hid ?>"><?php echo $htype?></option>

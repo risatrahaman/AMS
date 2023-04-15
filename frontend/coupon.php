@@ -12,7 +12,7 @@ else if (isset($_SESSION['aid'])){
   header("location:./coupon-admin.php");
 }
 else{
-  header("location:../frontend/login.php");
+  header("location:./login.php");
 }
 
 

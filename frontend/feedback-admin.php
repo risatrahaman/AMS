@@ -15,12 +15,7 @@
   <nav>
       <ul>
           <li><a href="../index.php">Home</a></li>
-          <li><a href="#">Book Now</a></li>
-          <li><a href="#">Flight</a></li>
-          <li><a href="#">Car-Service</a></li>
           <li><a href="./coupon.php">Coupon</a></li>
-          <li><a href="./leisure.php">Leisure</a></li>
-          <li><a href="./help.php">Help</a></li>
           <li id="current"><a href="./feedback.php">Feedback</a></li>
           <li><a href="./login.php">Login</a></li>
           <li><a href="./signup.php">Signup</a></li>
@@ -37,6 +32,7 @@
           </li>
       </ul>
   </nav>
+    <h1>Admin Feedback Panel</h1>
     <table id = "feedback-box">
         <tr class = "feedbacks">
             <th class = "column">Customer-ID</th>

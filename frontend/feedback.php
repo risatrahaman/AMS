@@ -11,7 +11,7 @@ else if (isset($_SESSION['aid'])){
   header("location:./feedback-admin.php");
 }
 else{
-  header("location:../frontend/login.php");
+  header("location:./login.php");
 }
 
 ?>
