@@ -45,7 +45,7 @@
         <div class="btn">
           <button type="button" class="book-btn">
             <h2><?php ?></h2>
-            <a href="#" class="1">Book Now</a>
+            <a href="./frontend/flight-customer.php" class="1">Book Now</a>
           </button>
         </div>
       </div>

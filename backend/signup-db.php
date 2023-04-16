@@ -13,7 +13,6 @@
 
     $userMode = $_POST['userMode'];
     
-    
     $result1 = mysqli_query($conn, "SELECT uid FROM user WHERE uid='$uid'");
     $result2 = mysqli_query($conn, "SELECT email FROM user WHERE email='$email'");
     
@@ -40,7 +39,6 @@
             mysqli_query($conn, "INSERT INTO admin VALUES('$uid', 'A-$uid')");
         }
     }
-
     # Going to login page after signup
     header("Location: ../frontend/login.php");
 

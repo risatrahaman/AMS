@@ -40,10 +40,10 @@ if (!isset($_SESSION['cid'])){
                     <option value="roundTrip">Round Trip</option>
                 </select>
                 <select name="passenger" id="passenger">
-                    <option value="one">1 Adult</option>
-                    <option value="two">2 Adults</option>
-                    <option value="three">3 Adults</option>
-                    <option value="four">4 Adults</option>
+                    <option value="1">1 Adult</option>
+                    <option value="2">2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
                 </select>
                 <select name="seat-type" id="seat-type">
                     <option value="economy">Economy</option>

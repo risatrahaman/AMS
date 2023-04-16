@@ -1,5 +1,4 @@
 <?php
-
 require_once("dbconnect.php");
 
 $result = mysqli_query($conn, "SELECT * FROM feedback");
@@ -23,5 +22,4 @@ if ($result->num_rows > 0){
 <?php
     } 
 }
-
 ?>

@@ -23,6 +23,7 @@
     }
     $price = $price * (int)substr($passengerNo, 0, 1);
     
+    
     mysqli_query($conn, "INSERT INTO ticket VALUES('$bookID', 1, 0, '$price', '$seatType', '$cid', '$bookDate', '$fdate', '$ftime')");
     
     header("location:../frontend/ticket-customer.php");
